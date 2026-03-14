@@ -1,18 +1,18 @@
 package tree
 
-type Node struct {
+type NNode struct {
 	Val      int
-	Children []*Node
+	Children []*NNode
 }
 
 // 迭代
-func NlevelOrder(root *Node) [][]int {
+func NlevelOrder(root *NNode) [][]int {
 	ans := make([][]int, 0)
 	if root == nil {
 		return ans
 	}
 
-	stack := make([]*Node, 0)
+	stack := make([]*NNode, 0)
 	stack = append(stack, root)
 
 	for len(stack) > 0 {
@@ -35,7 +35,7 @@ func NlevelOrder(root *Node) [][]int {
 
 // 递归
 
-func NDlevelOrder(root *Node) [][]int {
+func NDlevelOrder(root *NNode) [][]int {
 	ans := make([][]int, 0)
 
 	if root == nil {
@@ -43,8 +43,8 @@ func NDlevelOrder(root *Node) [][]int {
 	}
 	depth := 0
 
-	var Norder func(root *Node, depth int)
-	Norder = func(root *Node, depth int) {
+	var Norder func(root *NNode, depth int)
+	Norder = func(root *NNode, depth int) {
 		if root == nil {
 			return
 		}
