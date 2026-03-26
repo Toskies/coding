@@ -99,6 +99,8 @@ fmt.Println("there")
 
 ## 6. 常用 `go test` 调试命令
 
+对应可运行示例见：[../debug/README.md](../debug/README.md) 的 “对应文档第 6 条”。
+
 ### 只跑一个测试
 
 ```bash
@@ -133,6 +135,8 @@ go test -run TestFoo -count=100 -v ./...
 
 ## 7. 并发问题，优先用 `-race`
 
+对应可运行示例见：[../debug/README.md](../debug/README.md) 的 “对应文档第 7 条”。
+
 只要怀疑有：
 
 - 共享变量乱写
@@ -154,6 +158,8 @@ go test -race ./...
 - 但它通常是并发排查的第一手工具
 
 ## 8. 用 Delve 做断点调试
+
+对应可运行示例见：[../debug/README.md](../debug/README.md) 的 “对应文档第 8 条”。
 
 Go 最常用的调试器是 `dlv`。
 
@@ -186,6 +192,8 @@ dlv test ./pkg/foo
 - 想确认条件分支为什么进入
 
 ## 9. 死锁、卡死、阻塞，先看 goroutine 堆栈
+
+对应可运行示例见：[../debug/README.md](../debug/README.md) 的 “对应文档第 9 条”。
 
 如果程序表现为：
 
@@ -249,6 +257,8 @@ kill -QUIT <pid>
 
 ## 12. 性能问题和逻辑问题要分开查
 
+对应可运行示例见：[../debug/README.md](../debug/README.md) 的 “对应文档第 12 条”。
+
 很多人一看到“慢”，就开始凭感觉改算法、改锁、改 SQL。
 
 正确顺序应该是：
@@ -284,6 +294,8 @@ Go 里性能排查最常用的工具链是：
 没有验证的修复，通常只是换一种猜法。
 
 ## 14. 常用命令清单
+
+如果你想直接在本仓库里跟着操作，可以从这里跳到可运行示例：[../debug/README.md](../debug/README.md)。
 
 ### 日常调试
 
