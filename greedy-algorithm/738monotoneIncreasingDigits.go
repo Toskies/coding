@@ -1,5 +1,9 @@
 package greedyalgorithm
 
+import (
+	"strconv"
+)
+
 /*
 https://leetcode.cn/problems/monotone-increasing-digits/description/
 
@@ -9,5 +13,16 @@ https://leetcode.cn/problems/monotone-increasing-digits/description/
 */
 
 func monotoneIncreasingDigits(n int) int {
+	s := strconv.Itoa(n)
 
+	for i := len(s) - 2; i >= 0; i-- {
+		if s[i] > s[i+1] {
+			s = s[:i] + string(s[i]-1) + s[i+1:]
+			for j := i + 1; j < len(s); j++ {
+				s = s[:j] + "9" + s[j+1:]
+			}
+		}
+	}
+	ans, _ := strconv.Atoi(s)
+	return ans
 }
